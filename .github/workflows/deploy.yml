@@ -1,4 +1,4 @@
-name: Deploy Resume to GitHub Pages
+name: Deploy Biblical Transcription App to GitHub Pages
 
 on:
   push:

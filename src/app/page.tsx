@@ -20,6 +20,12 @@ export default function Home() {
   const [isTextusReceptusOpen, setIsTextusReceptusOpen] = useState(false);
   const [isErasmusRevolutionOpen, setIsErasmusRevolutionOpen] = useState(false);
   const [isPrintingFirstOpen, setIsPrintingFirstOpen] = useState(false);
+  const [isWestcottHortOpen, setIsWestcottHortOpen] = useState(false);
+  const [isNeutralTextOpen, setIsNeutralTextOpen] = useState(false);
+  const [isShanghaiConferenceOpen, setIsShanghaiConferenceOpen] =
+    useState(false);
+  const [isUnionVersionOpen, setIsUnionVersionOpen] = useState(false);
+  const [isManuscriptChoiceOpen, setIsManuscriptChoiceOpen] = useState(false);
 
   return (
     <div className="bg-background min-h-screen">
@@ -994,10 +1000,259 @@ export default function Home() {
             </h3>
             <ul className="text-muted-foreground ml-11 space-y-2">
               <li>
-                威式與霍式新約聖經（The New Testament in the Original
-                Greek︔劍橋，1881）
+                <Collapsible
+                  open={isWestcottHortOpen}
+                  onOpenChange={setIsWestcottHortOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isWestcottHortOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    威斯科特與霍特集大成之作：1881年劍橋版新約聖經
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-stone-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          👨‍🎓 學術雙璧：Westcott & Hort
+                        </h5>
+                        <div className="grid gap-3 md:grid-cols-2">
+                          <div className="rounded border bg-white p-3 dark:bg-stone-800">
+                            <div className="mb-2 text-sm font-medium text-blue-700 dark:text-blue-400">
+                              Brooke Foss Westcott (1825-1901)
+                            </div>
+                            <ul className="text-muted-foreground space-y-1 text-xs">
+                              <li>• 劍橋大學神學教授</li>
+                              <li>• 新約經文批判學先驅</li>
+                              <li>• 後任達勒姆主教</li>
+                            </ul>
+                          </div>
+                          <div className="rounded border bg-white p-3 dark:bg-stone-800">
+                            <div className="mb-2 text-sm font-medium text-green-700 dark:text-green-400">
+                              Fenton John Anthony Hort (1828-1892)
+                            </div>
+                            <ul className="text-muted-foreground space-y-1 text-xs">
+                              <li>• 劍橋大學希臘語教授</li>
+                              <li>• 經文批判理論大師</li>
+                              <li>• 系譜學方法創建者</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-blue-700 dark:text-blue-400">
+                          📚 The New Testament in the Original Greek (1881)
+                        </h5>
+                        <div className="space-y-2 rounded border bg-white p-3 dark:bg-stone-800">
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 出版資訊
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              Cambridge: Macmillan and Co., 1881 (2 volumes)
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 學術特色
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              首次系統性運用科學方法建構希臘文新約經文
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 革命意義
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              徹底挑戰並推翻了傳統Textus Receptus的權威地位
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-purple-700 dark:text-purple-400">
+                          🔬 科學化的經文批判方法
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border-l-4 border-purple-400 bg-purple-50 p-3 dark:bg-purple-950/30">
+                            <div className="text-sm">
+                              <span className="font-medium text-purple-800 dark:text-purple-300">
+                                創新的研究方法：
+                              </span>
+                              <ul className="mt-2 ml-4 space-y-1 text-xs text-purple-700 dark:text-purple-200">
+                                <li>• 系譜學分析：追溯手稿傳承關係</li>
+                                <li>• 內證與外證並重：內容與歷史證據結合</li>
+                                <li>• 地理分布考量：不同地區文本傳統比較</li>
+                                <li>• 統計學原則：量化分析異文出現頻率</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="rounded border-l-4 border-amber-400 bg-amber-50 p-3 dark:bg-amber-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-amber-600 dark:text-amber-400">
+                                ⚖️
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-amber-800 dark:text-amber-200">
+                                  經文評估原則
+                                </p>
+                                <p className="text-xs leading-relaxed text-amber-700 dark:text-amber-300">
+                                  「較難讀法優先」（lectio difficilior
+                                  potior）： 抄寫員傾向於簡化或修正困難的讀法，
+                                  因此較困難或不尋常的讀法通常更接近原文。
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
               </li>
-              <li>主後四世紀的經⽂型態與《英國修訂譯本》</li>
+              <li>
+                <Collapsible
+                  open={isNeutralTextOpen}
+                  onOpenChange={setIsNeutralTextOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isNeutralTextOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    公元四世紀的經文型態：「中性經文」理論與《英國修訂譯本》
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-green-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          🎯 「中性經文」(Neutral Text) 理論
+                        </h5>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          Westcott與Hort提出了劃時代的「中性經文」理論，
+                          認為存在一個相對純淨、未受後期編輯影響的經文型態，
+                          主要保存在4世紀的亞歷山大里亞文本傳統中。
+                          這個理論徹底改變了學者對新約經文歷史的理解。
+                        </p>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-blue-700 dark:text-blue-400">
+                          📊 四大文本型態分類
+                        </h5>
+                        <div className="grid gap-3 md:grid-cols-2">
+                          <div className="space-y-2">
+                            <div className="rounded border-l-4 border-green-500 bg-green-50 p-3 dark:bg-green-950/30">
+                              <div className="mb-1 text-sm font-medium text-green-800 dark:text-green-300">
+                                🥇 中性經文 (Neutral)
+                              </div>
+                              <ul className="space-y-1 text-xs text-green-700 dark:text-green-200">
+                                <li>• 代表：西奈抄本(ℵ)、梵蒂岡抄本(B)</li>
+                                <li>• 特色：最接近原始經文</li>
+                                <li>• 地區：亞歷山大里亞</li>
+                              </ul>
+                            </div>
+                            <div className="rounded border-l-4 border-blue-500 bg-blue-50 p-3 dark:bg-blue-950/30">
+                              <div className="mb-1 text-sm font-medium text-blue-800 dark:text-blue-300">
+                                📚 亞歷山大文本 (Alexandrian)
+                              </div>
+                              <ul className="space-y-1 text-xs text-blue-700 dark:text-blue-200">
+                                <li>• 代表：亞歷山大抄本(A)</li>
+                                <li>• 特色：學者修訂痕跡</li>
+                                <li>• 品質：次於中性經文</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="space-y-2">
+                            <div className="rounded border-l-4 border-orange-500 bg-orange-50 p-3 dark:bg-orange-950/30">
+                              <div className="mb-1 text-sm font-medium text-orange-800 dark:text-orange-300">
+                                🏛️ 西方文本 (Western)
+                              </div>
+                              <ul className="space-y-1 text-xs text-orange-700 dark:text-orange-200">
+                                <li>• 代表：貝札抄本(D)</li>
+                                <li>• 特色：意譯與擴充較多</li>
+                                <li>• 地區：羅馬、高盧</li>
+                              </ul>
+                            </div>
+                            <div className="rounded border-l-4 border-red-500 bg-red-50 p-3 dark:bg-red-950/30">
+                              <div className="mb-1 text-sm font-medium text-red-800 dark:text-red-300">
+                                🏰 敘利亞文本 (Syrian)
+                              </div>
+                              <ul className="space-y-1 text-xs text-red-700 dark:text-red-200">
+                                <li>• 代表：Textus Receptus基礎</li>
+                                <li>• 特色：後期編輯整合</li>
+                                <li>• 評價：最遠離原文</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-purple-700 dark:text-purple-400">
+                          📖 對《英國修訂譯本》的影響
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border bg-white p-3 dark:bg-stone-800">
+                            <div>
+                              <span className="text-sm font-medium">
+                                ■ Revised Version (1881-1885)
+                              </span>
+                              <p className="text-muted-foreground ml-3 text-xs">
+                                英國教會委託修訂的新版聖經，以Westcott-Hort經文為基礎
+                              </p>
+                            </div>
+                            <div className="mt-2">
+                              <span className="text-sm font-medium">
+                                ■ 重大改變
+                              </span>
+                              <p className="text-muted-foreground ml-3 text-xs">
+                                放棄傳統Textus Receptus，採納古代手稿證據
+                              </p>
+                            </div>
+                            <div className="mt-2">
+                              <span className="text-sm font-medium">
+                                ■ 深遠影響
+                              </span>
+                              <p className="text-muted-foreground ml-3 text-xs">
+                                成為後續現代聖經譯本的學術標準
+                              </p>
+                            </div>
+                          </div>
+                          <div className="rounded border-l-4 border-gray-400 bg-gray-50 p-3 dark:bg-gray-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-gray-600 dark:text-gray-400">
+                                🤔
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-gray-800 dark:text-gray-200">
+                                  學術爭議與反思
+                                </p>
+                                <p className="text-xs leading-relaxed text-gray-700 dark:text-gray-300">
+                                  Westcott-Hort的理論在當時引起巨大爭議，
+                                  特別是對傳統經文的挑戰。雖然現代學者對其「中性經文」概念有所修正，
+                                  但其科學化的研究方法和對古代手稿的重視，
+                                  仍是現代經文批判學的重要基礎。
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </li>
+              <li className="text-sm italic">
+                Brooke Foss Westcott (1825-1901) & Fenton John Anthony Hort
+                (1828-1892)
+              </li>
             </ul>
           </section>
 
@@ -1010,8 +1265,334 @@ export default function Home() {
               傳統與現代的融合
             </h3>
             <ul className="text-muted-foreground ml-11 space-y-2">
-              <li>中⽂《和合本》（1911︔1890 年上海在華傳教⼠⼤會）</li>
-              <li>希臘⽂底本的抉擇與取捨</li>
+              <li>
+                <Collapsible
+                  open={isShanghaiConferenceOpen}
+                  onOpenChange={setIsShanghaiConferenceOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isShanghaiConferenceOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    1890年上海在華傳教士大會：中文聖經翻譯的轉捩點
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-stone-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          🏛️ 歷史背景：中國基督教傳教工作的里程碑
+                        </h5>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          1890年5月10-24日，來自各差會的傳教士在上海召開了具有歷史意義的「在華傳教士大會」
+                          (General Conference of the Protestant Missionaries of
+                          China)。
+                          這次大會面對的核心問題是：如何為中國教會提供一部統一、準確、
+                          且符合中文表達習慣的聖經譯本。
+                        </p>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-blue-700 dark:text-blue-400">
+                          📊 大會面臨的翻譯困境
+                        </h5>
+                        <div className="space-y-2 rounded border bg-white p-3 dark:bg-stone-800">
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 譯本分歧問題
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              當時已有馬禮遜《神天聖書》(1823)、麥都思《新遺詔書》等多個中文譯本，
+                              但在神學詞彙、翻譯風格上存在重大分歧
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 「譯名之爭」
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              最著名的是「上帝」vs「神」之爭，反映出不同宗派對神學概念的理解差異
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 底本選擇的挑戰
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              面對Textus
+                              Receptus與新發現古抄本的證據，如何選擇最適當的希臘文底本？
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-green-700 dark:text-green-400">
+                          🎯 大會的重要決議
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border-l-4 border-green-400 bg-green-50 p-3 dark:bg-green-950/30">
+                            <div className="text-sm">
+                              <span className="font-medium text-green-800 dark:text-green-300">
+                                統一翻譯計劃：
+                              </span>
+                              <ul className="mt-2 ml-4 space-y-1 text-xs text-green-700 dark:text-green-200">
+                                <li>• 組織聯合翻譯委員會，整合各差會資源</li>
+                                <li>• 制定統一的翻譯原則與神學詞彙標準</li>
+                                <li>• 採用「和合」方式，調和不同宗派觀點</li>
+                                <li>• 分為深文理、淺文理、官話三個版本</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </li>
+              <li>
+                <Collapsible
+                  open={isUnionVersionOpen}
+                  onOpenChange={setIsUnionVersionOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isUnionVersionOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    中文和合本的誕生：1919年的里程碑
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-blue-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          📚 翻譯委員會的組成與工作
+                        </h5>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          經過近三十年的努力，1919年中文《和合本》聖經正式出版。
+                          這部影響深遠的譯本是中外學者通力合作的結晶，
+                          其翻譯過程展現了當時對希臘文底本選擇的深思熟慮。
+                        </p>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-purple-700 dark:text-purple-400">
+                          👥 翻譯團隊的國際合作
+                        </h5>
+                        <div className="grid gap-3 md:grid-cols-2">
+                          <div className="rounded border bg-white p-3 dark:bg-stone-800">
+                            <div className="mb-2 text-sm font-medium text-blue-700 dark:text-blue-400">
+                              西方學者代表
+                            </div>
+                            <ul className="text-muted-foreground space-y-1 text-xs">
+                              <li>• 富善 (Chauncey Goodrich) - 美國公理會</li>
+                              <li>
+                                • 鮑康寧 (Frederick W. Baller) - 英國浸信會
+                              </li>
+                              <li>• 白漢理 (Henry Blodget) - 美國公理會</li>
+                            </ul>
+                          </div>
+                          <div className="rounded border bg-white p-3 dark:bg-stone-800">
+                            <div className="mb-2 text-sm font-medium text-green-700 dark:text-green-400">
+                              中國學者代表
+                            </div>
+                            <ul className="text-muted-foreground space-y-1 text-xs">
+                              <li>• 劉廷芳 - 燕京大學教授</li>
+                              <li>• 徐謙 - 中華基督教青年會</li>
+                              <li>• 誠靜怡 - 華人教會領袖</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-amber-700 dark:text-amber-400">
+                          📖 底本選擇的演進歷程
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border bg-white p-3 dark:bg-stone-800">
+                            <div>
+                              <span className="text-sm font-medium">
+                                ■ 初期依據 (1890-1900)
+                              </span>
+                              <p className="text-muted-foreground ml-3 text-xs">
+                                以Scrivener版Textus
+                                Receptus為主要底本，參考Tischendorf第八版
+                              </p>
+                            </div>
+                            <div className="mt-2">
+                              <span className="text-sm font-medium">
+                                ■ 中期調整 (1900-1910)
+                              </span>
+                              <p className="text-muted-foreground ml-3 text-xs">
+                                加入Westcott-Hort經文的重要發現，在關鍵經文處進行比較
+                              </p>
+                            </div>
+                            <div className="mt-2">
+                              <span className="text-sm font-medium">
+                                ■ 最終版本 (1910-1919)
+                              </span>
+                              <p className="text-muted-foreground ml-3 text-xs">
+                                採用折衷方案，在Textus
+                                Receptus基礎上，採納古抄本的重要證據
+                              </p>
+                            </div>
+                          </div>
+                          <div className="rounded border-l-4 border-orange-400 bg-orange-50 p-3 dark:bg-orange-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-orange-600 dark:text-orange-400">
+                                🔍
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-orange-800 dark:text-orange-200">
+                                  實例：太1:25的處理
+                                </p>
+                                <p className="text-xs leading-relaxed text-orange-700 dark:text-orange-300">
+                                  和合本在太1:25採用「等她生了兒子」，並在小註標明「有古卷：等她生了頭胎的兒子」。
+                                  這展現了翻譯委員會對古抄本證據的重視，
+                                  同時保持對傳統經文的尊重。
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </li>
+              <li>
+                <Collapsible
+                  open={isManuscriptChoiceOpen}
+                  onOpenChange={setIsManuscriptChoiceOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isManuscriptChoiceOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    希臘文底本的抉擇與取捨：學術與實用的平衡
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-green-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          ⚖️ 翻譯中的底本選擇困境
+                        </h5>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          中文聖經翻譯面臨的核心問題是：如何在學術準確性與實用性之間取得平衡？
+                          19-20世紀正值經文批判學興起，新的手稿證據不斷湧現，
+                          翻譯者必須在不同的希臘文底本間做出明智的選擇。
+                        </p>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-red-700 dark:text-red-400">
+                          🎯 底本選擇的考量因素
+                        </h5>
+                        <div className="grid gap-3 md:grid-cols-2">
+                          <div className="space-y-2">
+                            <div className="rounded border-l-4 border-blue-500 bg-blue-50 p-3 dark:bg-blue-950/30">
+                              <div className="mb-1 text-sm font-medium text-blue-800 dark:text-blue-300">
+                                📚 學術因素
+                              </div>
+                              <ul className="space-y-1 text-xs text-blue-700 dark:text-blue-200">
+                                <li>• 手稿年代的古老程度</li>
+                                <li>• 地理分布的廣泛性</li>
+                                <li>• 內證與外證的一致性</li>
+                                <li>• 經文批判學的最新成果</li>
+                              </ul>
+                            </div>
+                            <div className="rounded border-l-4 border-orange-500 bg-orange-50 p-3 dark:bg-orange-950/30">
+                              <div className="mb-1 text-sm font-medium text-orange-800 dark:text-orange-300">
+                                🌍 文化因素
+                              </div>
+                              <ul className="space-y-1 text-xs text-orange-700 dark:text-orange-200">
+                                <li>• 中文表達習慣</li>
+                                <li>• 中國文化背景理解</li>
+                                <li>• 佛道教詞彙的避免</li>
+                                <li>• 儒家思想的融合</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="space-y-2">
+                            <div className="rounded border-l-4 border-green-500 bg-green-50 p-3 dark:bg-green-950/30">
+                              <div className="mb-1 text-sm font-medium text-green-800 dark:text-green-300">
+                                ⛪ 教會因素
+                              </div>
+                              <ul className="space-y-1 text-xs text-green-700 dark:text-green-200">
+                                <li>• 不同宗派的神學觀點</li>
+                                <li>• 傳統經文的接受度</li>
+                                <li>• 牧會實用性的考量</li>
+                                <li>• 會眾理解的容易程度</li>
+                              </ul>
+                            </div>
+                            <div className="rounded border-l-4 border-purple-500 bg-purple-50 p-3 dark:bg-purple-950/30">
+                              <div className="mb-1 text-sm font-medium text-purple-800 dark:text-purple-300">
+                                🕐 時代因素
+                              </div>
+                              <ul className="space-y-1 text-xs text-purple-700 dark:text-purple-200">
+                                <li>• 19世紀末的學術水準</li>
+                                <li>• 可獲得的研究資源</li>
+                                <li>• 國際學術交流狀況</li>
+                                <li>• 印刷技術的限制</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-amber-700 dark:text-amber-400">
+                          🔍 和合本的選擇策略
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border-l-4 border-amber-400 bg-amber-50 p-3 dark:bg-amber-950/30">
+                            <div className="text-sm">
+                              <span className="font-medium text-amber-800 dark:text-amber-300">
+                                三重標準的智慧：
+                              </span>
+                              <div className="mt-2 space-y-2 text-xs text-amber-700 dark:text-amber-200">
+                                <div className="rounded border-l-2 border-amber-600 bg-amber-100 p-2 dark:bg-amber-900/40">
+                                  <div className="font-semibold text-amber-800 dark:text-amber-200">
+                                    1. 保守穩健原則
+                                  </div>
+                                  <div className="mt-1 text-amber-700 dark:text-amber-300">
+                                    優先採用傳統Textus
+                                    Receptus，確保與西方教會的一致性
+                                  </div>
+                                </div>
+                                <div className="rounded border-l-2 border-amber-600 bg-amber-100 p-2 dark:bg-amber-900/40">
+                                  <div className="font-semibold text-amber-800 dark:text-amber-200">
+                                    2. 學術開放原則
+                                  </div>
+                                  <div className="mt-1 text-amber-700 dark:text-amber-300">
+                                    重要異文處參考古抄本證據，在小字註中提供替代讀法
+                                  </div>
+                                </div>
+                                <div className="rounded border-l-2 border-amber-600 bg-amber-100 p-2 dark:bg-amber-900/40">
+                                  <div className="font-semibold text-amber-800 dark:text-amber-200">
+                                    3. 中國化原則
+                                  </div>
+                                  <div className="mt-1 text-amber-700 dark:text-amber-300">
+                                    在不違背原文的前提下，採用最適合中文表達的譯法
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </li>
+              <li className="text-sm italic">
+                中文和合本翻譯委員會 (1890-1919)
+              </li>
             </ul>
           </section>
         </main>

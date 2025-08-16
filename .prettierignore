@@ -1,0 +1,41 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Production builds
+.next/
+out/
+dist/
+build/
+
+# Generated files
+.turbo
+.swc
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Local env files
+.env*.local
+.env
+
+# Cache
+.eslintcache
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+*.pem
+
+# Package lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

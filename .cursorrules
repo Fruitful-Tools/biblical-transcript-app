@@ -1,0 +1,141 @@
+# Cursor Rules for Biblical Transcription App
+
+You are an expert in TypeScript, Next.js 15, React 19, Tailwind CSS 4, and shadcn/ui.
+
+## Techstack
+
+- [Next.js 15](https://nextjs.org/docs): React framework with App Router and static export
+- [React 19](https://react.dev/reference/react): Frontend library with latest features
+- [Tailwind CSS 4](https://tailwindcss.com/docs/installation/framework-guides/nextjs): Utility-first CSS framework (beta)
+- [shadcn/ui](https://ui.shadcn.com/docs/installation/next): Component library patterns
+- [Turbopack](https://nextjs.org/docs/app/api-reference/turbopack): Fast development bundler
+- [TypeScript](https://www.typescriptlang.org/docs/): Type safety and developer experience
+
+## Code Style and Structure
+
+### Next.js & React Guidelines
+- Use Next.js 15 App Router architecture with server and client components
+- Prefer React Server Components (RSC) by default, only use "use client" when necessary
+- Use React 19 features like concurrent features and improved error boundaries
+- Follow React 19 best practices for hooks and component lifecycle
+- Implement proper error boundaries and loading states
+- Use Next.js built-in optimizations (Image, Link, fonts, etc.)
+
+### TypeScript Best Practices
+- Use strict TypeScript configuration as defined in tsconfig.json
+- Always define proper types for props, state, and function parameters
+- Use type annotations for complex objects and API responses
+- Prefer `interface` over `type` for object definitions
+- Use proper generics when needed
+- Implement proper error handling with typed catch blocks
+
+### File Naming and Organization
+- Use kebab-case for files and folders (e.g., `user-profile.tsx`)
+- Use PascalCase for React components
+- Place components in `/src/components/` with subdirectories for organization
+- Use the established path aliases:
+  - `@/components` for components
+  - `@/lib` for utilities and helpers
+  - `@/hooks` for custom hooks
+  - `@/ui` for shadcn/ui components
+
+### Component Structure
+- Create reusable components in `/src/components/`
+- UI components from shadcn/ui should be in `/src/components/ui/`
+- Use proper component composition and prop drilling avoidance
+- Implement proper component documentation with JSDoc comments
+- Follow the component pattern established in the existing codebase
+
+## Styling and UI
+
+### Tailwind CSS 4 (Beta)
+- Use Tailwind CSS 4 beta features and syntax
+- Prefer utility classes over custom CSS when possible
+- Use the CSS variable system for theming (cssVariables: true in config)
+- Follow the stone base color scheme as configured
+- Use responsive design patterns with Tailwind breakpoints
+- Leverage Tailwind's modern features and improved performance
+
+### shadcn/ui Integration
+- Use the New York style variant as configured
+- Import components from `@/components/ui/`
+- Follow shadcn/ui patterns for component composition
+- Use Radix UI primitives through shadcn/ui components
+- Implement proper accessibility through shadcn/ui defaults
+- Use Lucide React for icons as configured
+
+### Design System
+- Follow consistent spacing and typography patterns
+- Use CSS variables for colors and theming
+- Implement proper dark/light mode support if needed
+- Use the established design tokens from Tailwind config
+
+## Development Patterns
+
+### State Management
+- Use React 19's built-in state management features
+- Prefer useState and useReducer for local state
+- Consider React 19's concurrent features for complex state
+- Implement proper state lifting and composition patterns
+
+### Data Fetching
+- Use Next.js 15 data fetching patterns (Server Components, fetch API)
+- Implement proper loading states and error handling
+- Use React 19's Suspense boundaries effectively
+- Consider caching strategies appropriate for the biblical transcription domain
+
+### Performance
+- Leverage Next.js 15 and Turbopack optimizations
+- Use React 19's concurrent features for performance
+- Implement proper code splitting and lazy loading
+- Optimize images and assets using Next.js built-in tools
+
+## Code Quality
+
+### Error Handling
+- Implement comprehensive error boundaries
+- Use proper try-catch blocks with typed errors
+- Provide meaningful error messages for users
+- Log errors appropriately for debugging
+
+### Testing Considerations
+- Write components that are easily testable
+- Use proper prop types and interfaces
+- Implement proper mocking patterns for tests
+- Consider accessibility testing in component design
+
+### Documentation
+- Use JSDoc comments for complex functions and components
+- Document API interfaces and data structures
+- Maintain clear README and setup instructions
+- Document any biblical transcription specific logic
+
+## Biblical Transcription App Specific
+
+### Content Handling
+- Handle multilingual content (Chinese, Greek, Hebrew) properly
+- Implement proper text encoding and display
+- Consider RTL (right-to-left) text support if needed
+- Handle special characters and diacritical marks
+
+### Data Structures
+- Design proper interfaces for biblical manuscripts and transcriptions
+- Handle version control for different manuscript variants
+- Implement proper search and filtering for biblical texts
+- Consider hierarchical data structures for biblical references
+
+### User Experience
+- Provide intuitive navigation for biblical texts
+- Implement proper text comparison features
+- Design accessible interfaces for scholarly research
+- Consider export and citation features
+
+## General Best Practices
+- Keep components small and focused on single responsibilities
+- Use descriptive variable and function names
+- Implement proper security practices for web applications
+- Follow semantic HTML principles
+- Ensure mobile responsiveness and accessibility
+- Use proper Git commit messages and branch naming
+- Implement proper environment variable handling
+- Follow the principle of least privilege for component access

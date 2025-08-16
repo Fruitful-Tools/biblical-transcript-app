@@ -16,6 +16,10 @@ export default function Home() {
     useState(false);
   const [isManuscriptEvaluationOpen, setIsManuscriptEvaluationOpen] =
     useState(false);
+  const [isWettsteinSystemOpen, setIsWettsteinSystemOpen] = useState(false);
+  const [isTextusReceptusOpen, setIsTextusReceptusOpen] = useState(false);
+  const [isErasmusRevolutionOpen, setIsErasmusRevolutionOpen] = useState(false);
+  const [isPrintingFirstOpen, setIsPrintingFirstOpen] = useState(false);
 
   return (
     <div className="bg-background min-h-screen">
@@ -439,9 +443,231 @@ export default function Home() {
             </h3>
             <ul className="text-muted-foreground ml-11 space-y-2">
               <li>
-                韋氏新約希臘⽂聖經（Wettstein's NTG︔阿姆斯特丹，1751–1752）
+                <Collapsible
+                  open={isWettsteinSystemOpen}
+                  onOpenChange={setIsWettsteinSystemOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isWettsteinSystemOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    韋特斯坦的學術革命：1693-1754年
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-stone-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          👨‍🎓 Johann Jakob Wettstein (1693-1754)
+                        </h5>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          瑞士新約學者，生於巴塞爾的學術世家。
+                          Wettstein以其龐大的希臘文抄本蒐集工作聞名，
+                          被譽為「抄本搜集狂」。他的畢生努力為現代新約經文批判學奠定了堅實的基礎。
+                        </p>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-blue-700 dark:text-blue-400">
+                          📖 韋氏新約希臘文聖經 (1751-1752)
+                        </h5>
+                        <div className="space-y-2 rounded border bg-white p-3 dark:bg-stone-800">
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 出版資訊
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              Novum Testamentum Graecum (Amsterdam 1751-1752)
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 學術特色
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              首次建立系統性的抄本編目，為每個抄本分配獨特編號
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 重要性
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              創建了現代抄本研究的分類系統基礎
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-green-700 dark:text-green-400">
+                          🗂️ 革命性的編目系統
+                        </h5>
+                        <div className="space-y-3">
+                          <p className="text-foreground text-sm leading-relaxed">
+                            Wettstein 建立了第一個系統性的希臘文抄本編目系統，
+                            將抄本分為不同類別並給予統一編號。這個系統成為後來所有抄本研究的標準。
+                          </p>
+                          <div className="rounded border-l-4 border-green-400 bg-green-50 p-3 dark:bg-green-950/30">
+                            <div className="text-sm">
+                              <span className="font-medium text-green-800 dark:text-green-300">
+                                分類與縮寫系統：
+                              </span>
+                              <ul className="mt-2 ml-4 space-y-1 text-xs text-green-700 dark:text-green-200">
+                                <li>
+                                  • 大楷體抄本：使用大寫拉丁字母 (A, B, C...)
+                                </li>
+                                <li>
+                                  • 小楷體抄本：使用阿拉伯數字 (1, 2, 3...)
+                                </li>
+                                <li>• 經課集：使用小寫拉丁字母 (a, b, c...)</li>
+                                <li>• 統一的引用格式與縮寫規則</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
               </li>
-              <li>編⽬系統與「公認經⽂」</li>
+              <li>
+                <Collapsible
+                  open={isTextusReceptusOpen}
+                  onOpenChange={setIsTextusReceptusOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isTextusReceptusOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    「公認經文」(Textus Receptus) 的發展
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-amber-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          📜 「公認經文」的概念
+                        </h5>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          Textus Receptus（拉丁文，意為「受公認的經文」）
+                          是指從16到19世紀廣泛被接受的希臘文新約經文版本。
+                          這個傳統主要建基於較晚期的拜占庭手稿，
+                          直到19世紀古抄本的發現才開始受到質疑。
+                        </p>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-red-700 dark:text-red-400">
+                          🏛️ Elzevir版本的歷史地位 (1633年)
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border bg-white p-3 dark:bg-stone-800">
+                            <div>
+                              <span className="text-sm font-medium">
+                                ■ 出版資訊
+                              </span>
+                              <p className="text-muted-foreground ml-3 text-xs">
+                                Novum Testamentum (Leiden 1633) - Elzevir兄弟版
+                              </p>
+                            </div>
+                            <div className="mt-2">
+                              <span className="text-sm font-medium">
+                                ■ 著名的推廣口號
+                              </span>
+                              <div className="mt-2 ml-3 rounded border-l-4 border-red-400 bg-red-50 p-3 dark:bg-red-950/30">
+                                <p className="text-xs leading-relaxed text-red-800 italic dark:text-red-200">
+                                  「這部經文為今日所公認接受，其中無一處我們更動或算改。」
+                                </p>
+                                <p className="text-muted-foreground mt-1 text-xs">
+                                  (Textum ergo habes, nunc ab omnibus
+                                  receptum...)
+                                </p>
+                              </div>
+                            </div>
+                            <div className="mt-2">
+                              <span className="text-sm font-medium">
+                                ■ 「公認經文」的英定與影響
+                              </span>
+                              <p className="text-muted-foreground ml-3 text-xs">
+                                此版本正式確立了「Textus Receptus」這個專有名詞
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="rounded border-l-4 border-orange-400 bg-orange-50 p-3 dark:bg-orange-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-orange-600 dark:text-orange-400">
+                                ⚡
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-orange-800 dark:text-orange-200">
+                                  市場行銷的成功典範
+                                </p>
+                                <p className="text-xs leading-relaxed text-orange-700 dark:text-orange-300">
+                                  Elzevir兄弟透過這句強而有力的行銷口號，
+                                  成功地將他們的版本建立為「標準」經文，
+                                  影響了之後三個世紀的聖經翻譯工作。
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-purple-700 dark:text-purple-400">
+                          🔍 Wettstein的重要貢獻
+                        </h5>
+                        <div className="space-y-2 rounded border bg-white p-3 dark:bg-stone-800">
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 系統性比較
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              將Textus Receptus與古代抄本進行詳細對比
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 異文記錄
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              詳細記錄不同抄本間的文本差異
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 學術客觀性
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              提供證據而不強行推翻傳統，讓讀者自行判斷
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-amber-700 dark:text-amber-400">
+                          🎯 歷史影響與遺產
+                        </h5>
+                        <div className="rounded border-l-4 border-amber-400 bg-amber-50 p-3 dark:bg-amber-950/30">
+                          <p className="text-sm leading-relaxed text-amber-800 dark:text-amber-200">
+                            Wettstein的工作為後來的經文批判學者（如Tischendorf、Tregelles等）
+                            提供了重要的基礎資料。他的編目系統至今仍在使用，
+                            成為現代新約經文研究不可或缺的工具。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </li>
+              <li className="text-sm italic">
+                Johann Jakob Wettstein (1693-1754)
+              </li>
             </ul>
           </section>
 
@@ -455,9 +681,306 @@ export default function Home() {
             </h3>
             <ul className="text-muted-foreground ml-11 space-y-2">
               <li>
-                伊拉斯姆的新約聖經（Erasmus's Novum Instrumentum︔巴塞爾，1516）
+                <Collapsible
+                  open={isErasmusRevolutionOpen}
+                  onOpenChange={setIsErasmusRevolutionOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isErasmusRevolutionOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    伊拉斯姆的新約希臘文聖經：1516年的革命性突破
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-stone-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          📚 Desiderius Erasmus (1466-1536)
+                        </h5>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          荷蘭人文主義學者伊拉斯姆，被譽為「歐洲的導師」。
+                          他不僅是傑出的古典學者和神學家，更是極具商業頭腦的出版家。
+                          1516年，他推出了歷史上第一部印刷版的新約希臘文聖經，
+                          這不僅是學術成就，更是一場成功的市場革命。
+                        </p>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-blue-700 dark:text-blue-400">
+                          📖 Novum Instrumentum (1516年巴塞爾版)
+                        </h5>
+                        <div className="space-y-2 rounded border bg-white p-3 dark:bg-stone-800">
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 出版資訊
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              Novum Instrumentum omne, diligenter ab Erasmo
+                              Roterodamo recognitum et emendatum (Basel: Froben,
+                              1516)
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 學術特色
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              首部印刷版新約希臘文聖經，對頁附拉丁文翻譯
+                            </p>
+                          </div>
+                          <div>
+                            <span className="text-sm font-medium">
+                              ■ 革命意義
+                            </span>
+                            <p className="text-muted-foreground ml-3 text-xs">
+                              打破天主教會對拉丁文武加大譯本的壟斷地位
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-green-700 dark:text-green-400">
+                          🏛️ 依據小楷體抄本編纂
+                        </h5>
+                        <div className="space-y-3">
+                          <p className="text-foreground text-sm leading-relaxed">
+                            伊拉斯姆的版本主要依據12-15世紀的小楷體（minuscule）抄本，
+                            而非更古老的大楷體抄本。雖然這在學術上並非最佳選擇，
+                            但這些抄本相對容易取得，也符合當時的商業考量。
+                          </p>
+                          <div className="rounded border-l-4 border-blue-400 bg-blue-50 p-3 dark:bg-blue-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-blue-600 dark:text-blue-400">
+                                ✍️
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-blue-800 dark:text-blue-200">
+                                  小楷體的技術革新
+                                </p>
+                                <p className="text-xs leading-relaxed text-blue-700 dark:text-blue-300">
+                                  小楷體（minuscule）是9世紀發展的改良大楷體書寫系統，
+                                  結合了大楷體的清晰度與草書的流暢性。
+                                  這種書寫方式不僅節省羊皮紙空間，更重要的是書寫速度快、
+                                  抄寫容易，大大降低了抄本製作成本，
+                                  使得聖經手稿能夠更廣泛地流傳。
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="rounded border-l-4 border-green-400 bg-green-50 p-3 dark:bg-green-950/30">
+                            <div className="text-sm">
+                              <span className="font-medium text-green-800 dark:text-green-300">
+                                主要依據抄本：
+                              </span>
+                              <ul className="mt-2 ml-4 space-y-2 text-xs text-green-700 dark:text-green-200">
+                                <li>
+                                  <div className="rounded border-l-2 border-green-600 bg-green-100 p-2 dark:bg-green-900/40">
+                                    <div className="font-semibold text-green-800 dark:text-green-200">
+                                      • GA 1 (小楷體抄本1號)
+                                    </div>
+                                    <div className="mt-1 text-green-700 dark:text-green-300">
+                                      十世紀小楷體手抄本，篇幅涵蓋絕大部分的新約
+                                    </div>
+                                    <div className="mt-1 text-green-600 dark:text-green-400">
+                                      現藏於巴塞爾大學圖書館 -
+                                      伊拉斯姆可就近取得
+                                    </div>
+                                    <div className="mt-1 text-xs text-green-600 italic dark:text-green-400">
+                                      採用改良大楷體，書寫容易，方便抄寫
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>• GA 2 (12世紀小楷體抄本，缺啟示錄)</li>
+                                <li>• GA 2814 (15世紀小楷體抄本，僅啟示錄)</li>
+                                <li>
+                                  • 數份巴塞爾當地可取得的拜占庭文本型抄本
+                                </li>
+                                <li>• 部分依據拉丁文武加大譯本回譯希臘文</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="mt-3 rounded border-l-4 border-amber-400 bg-amber-50 p-3 dark:bg-amber-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-amber-600 dark:text-amber-400">
+                                🎯
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-amber-800 dark:text-amber-200">
+                                  實用主義的明智選擇
+                                </p>
+                                <p className="text-xs leading-relaxed text-amber-700 dark:text-amber-300">
+                                  伊拉斯姆選擇小楷體抄本並非偶然：它們不僅在巴塞爾容易取得，
+                                  更重要的是這些抄本保存狀況較好、文字清晰易讀，
+                                  適合快速的出版工作。相較於古老但殘缺不全的大楷體抄本，
+                                  小楷體抄本提供了更完整的經文覆蓋，
+                                  這對於追求「完整聖經」的商業目標而言是更理想的選擇。
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-red-700 dark:text-red-400">
+                          ⚡ 公關行銷的天才策略
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border-l-4 border-red-400 bg-red-50 p-3 dark:bg-red-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-red-600 dark:text-red-400">
+                                🎯
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-red-800 dark:text-red-200">
+                                  「第一本印刷版希臘文新約」的市場定位
+                                </p>
+                                <p className="text-xs leading-relaxed text-red-700 dark:text-red-300">
+                                  伊拉斯姆巧妙地將自己的版本定位為「史上第一本印刷版希臘文新約聖經」，
+                                  這個強而有力的行銷口號讓他在競爭激烈的出版市場中佔得先機，
+                                  即使學術品質並非最佳，但市場成功無可置疑。
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="rounded border-l-4 border-orange-400 bg-orange-50 p-3 dark:bg-orange-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-orange-600 dark:text-orange-400">
+                                📈
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-orange-800 dark:text-orange-200">
+                                  商業成功的關鍵因素
+                                </p>
+                                <ul className="space-y-1 text-xs leading-relaxed text-orange-700 dark:text-orange-300">
+                                  <li>
+                                    • 把握時機：活版印刷技術成熟的黃金時期
+                                  </li>
+                                  <li>
+                                    •
+                                    雙語版本：希臘文與拉丁文對照，兼顧學者與教會需求
+                                  </li>
+                                  <li>• 價格策略：相較手抄本更加經濟實惠</li>
+                                  <li>• 品牌包裝：人文主義學者的權威背書</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
               </li>
-              <li>活版印刷術的「第⼀本」與⼩楷體抄本</li>
+              <li>
+                <Collapsible
+                  open={isPrintingFirstOpen}
+                  onOpenChange={setIsPrintingFirstOpen}
+                >
+                  <CollapsibleTrigger className="hover:text-foreground flex cursor-pointer items-center gap-2 transition-colors">
+                    {isPrintingFirstOpen ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    活版印刷術的「第一本」：市場行銷的永恆典範
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3 ml-6">
+                    <div className="space-y-4 rounded-lg border-l-4 border-amber-400 bg-stone-50 p-4 dark:bg-stone-900/50">
+                      <div>
+                        <h5 className="text-foreground mb-2 text-sm font-semibold">
+                          🖨️ 印刷革命與宗教改革
+                        </h5>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          1516年，正值古騰堡活版印刷術普及的關鍵時期。
+                          伊拉斯姆敏銳地察覺到這個技術革命帶來的商機，
+                          成為第一個成功將希臘文新約聖經商業化印刷的學者，
+                          為後來的宗教改革提供了重要的學術工具。
+                        </p>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-purple-700 dark:text-purple-400">
+                          📊 「第一本」的行銷威力
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border bg-white p-3 dark:bg-stone-800">
+                            <div className="text-sm leading-relaxed">
+                              <p className="text-foreground mb-2">
+                                伊拉斯姆的行銷策略堪稱典範：
+                              </p>
+                              <div className="grid gap-3 md:grid-cols-2">
+                                <div className="rounded border-l-4 border-purple-500 bg-purple-50 p-3 dark:bg-purple-950/30">
+                                  <div className="mb-2 text-sm font-medium text-purple-800 dark:text-purple-300">
+                                    ✨ 創新定位
+                                  </div>
+                                  <ul className="space-y-1 text-xs text-purple-700 dark:text-purple-200">
+                                    <li>• 「史上第一本」印刷版希臘文新約</li>
+                                    <li>• 突破傳統手抄本限制</li>
+                                    <li>• 民主化的知識傳播</li>
+                                  </ul>
+                                </div>
+                                <div className="rounded border-l-4 border-blue-500 bg-blue-50 p-3 dark:bg-blue-950/30">
+                                  <div className="mb-2 text-sm font-medium text-blue-800 dark:text-blue-300">
+                                    🎯 市場優勢
+                                  </div>
+                                  <ul className="space-y-1 text-xs text-blue-700 dark:text-blue-200">
+                                    <li>• 搶佔市場先機</li>
+                                    <li>• 建立品牌權威</li>
+                                    <li>• 創造話題熱度</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-3">
+                        <h5 className="mb-2 text-sm font-semibold text-green-700 dark:text-green-400">
+                          🌍 深遠的歷史影響
+                        </h5>
+                        <div className="space-y-3">
+                          <div className="rounded border-l-4 border-green-400 bg-green-50 p-3 dark:bg-green-950/30">
+                            <div className="text-sm">
+                              <span className="font-medium text-green-800 dark:text-green-300">
+                                對後世的重大影響：
+                              </span>
+                              <ul className="mt-2 ml-4 space-y-1 text-xs text-green-700 dark:text-green-200">
+                                <li>• 路德的德語聖經翻譯以此為底本</li>
+                                <li>• 英王欽定本聖經的希臘文參考</li>
+                                <li>• 奠定Textus Receptus的基礎</li>
+                                <li>• 啟發後續學者的競爭與改進</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="mt-3 rounded border-l-4 border-yellow-400 bg-yellow-50 p-3 dark:bg-yellow-950/30">
+                            <div className="flex items-start gap-2">
+                              <span className="text-sm text-yellow-600 dark:text-yellow-400">
+                                🤔
+                              </span>
+                              <div>
+                                <p className="mb-1 text-xs font-medium text-yellow-800 dark:text-yellow-200">
+                                  學術vs商業的平衡
+                                </p>
+                                <p className="text-xs leading-relaxed text-yellow-700 dark:text-yellow-300">
+                                  雖然伊拉斯姆的版本在學術上並非最完美（主要依據較晚的小楷體抄本），
+                                  但其商業成功促進了聖經學術研究的普及化，
+                                  這個案例至今仍是「如何在學術品質與商業成功間取得平衡」的經典教材。
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </li>
+              <li className="text-sm italic">Desiderius Erasmus (1466-1536)</li>
             </ul>
           </section>
 

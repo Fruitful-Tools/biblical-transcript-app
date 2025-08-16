@@ -28,18 +28,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: "npm"
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (required for GitHub Pages).
-          static_site_generator: next
 
       - name: Restore cache
         uses: actions/cache@v4
